@@ -1,46 +1,44 @@
 class Led
   def print(number)
-    number.to_s.chars.inject("\n\n\n") do |memo, i|
-      source_1, source_2, source_3 = memo.split("\n", -1)
-      new_1, new_2, new_3 = numbers[i.to_i].split("\n")
-      [source_1 + new_1, source_2 + new_2, source_3 + new_3].join("\n") << "\n"
-    end
+    number.to_s.chars.inject(["","",""]) do |memo, i|
+      memo.zip(numbers[i.to_i]).map { |memo_row, new_row| memo_row + new_row }
+    end.join("\n") + "\n"
   end
 
   private
 
   def numbers
     {
-      1 => "   \n" \
-           "  |\n" \
-           "  |\n",
-      2 => " _ \n" \
-           " _|\n" \
-           "|_ \n",
-      3 => " _ \n" \
-           " _|\n" \
-           " _|\n",
-      4 => "   \n" \
-           "|_|\n" \
-           "  |\n",
-      5 => " _ \n" \
-           "|_ \n" \
-           " _|\n",
-      6 => " _ \n" \
-           "|_ \n" \
-           "|_|\n",
-      7 => " _ \n" \
-           "  |\n" \
-           "  |\n",
-      8 => " _ \n" \
-           "|_|\n" \
-           "|_|\n",
-      9 => " _ \n" \
-           "|_|\n" \
-           " _|\n",
-      0 => " _ \n" \
-           "| |\n" \
-           "|_|\n",
+      1 => [ "   ",
+             "  |",
+             "  |" ],
+      2 => [ " _ ",
+             " _|",
+             "|_ "],
+      3 => [ " _ ",
+             " _|",
+             " _|"],
+      4 => [ "   ",
+             "|_|",
+             "  |"],
+      5 => [ " _ ",
+             "|_ ",
+             " _|"],
+      6 => [ " _ ",
+             "|_ ",
+             "|_|"],
+      7 => [ " _ ",
+             "  |",
+             "  |"],
+      8 => [ " _ ",
+             "|_|",
+             "|_|"],
+      9 => [ " _ ",
+             "|_|",
+             " _|"],
+      0 => [ " _ ",
+             "| |",
+             "|_|"],
     }
   end
 end
