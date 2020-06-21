@@ -31,4 +31,25 @@ TWELVE
 NUM
     assert_equal Led.new.print(1234567890), numbers
   end
+
+  def test_big_two
+    big_two = <<TWO
+ ___ 
+    |
+ ___|
+|    
+|___ 
+TWO
+    assert_equal Led.new(2,3).print(2), big_two
+  end
+  def test_big_twenty_seven
+    big_twenty_seven = <<TWENTY_SEVEN
+ ___  ___ 
+    |    |
+ ___|    |
+|        |
+|___     |
+TWENTY_SEVEN
+    assert_equal Led.new(2,3).print(27), big_twenty_seven
+  end
 end
