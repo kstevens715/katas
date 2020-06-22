@@ -26,6 +26,10 @@ class RpmTest < Minitest::Test
   end
 
   def test_three_functions
+    # According to the readme this is wrong, however I think it is correct.
+    # They claim that it should be `((5*8)+7)*3 = 141` Which is the same value
+    # but if we were doing non-communicative (like subtraction) instead of
+    # multiplication they would get the wrong answer.
     assert_equal Rpm.convert("3 5 8 * 7 + *"), "3*((5*8)+7) = 141"
   end
 end
