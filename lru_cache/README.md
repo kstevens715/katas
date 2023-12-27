@@ -36,3 +36,8 @@ bundle install
 rspec lru_cache_test.rb
 ```
 
+JavaScript
+```
+npm install
+npm test
+```
