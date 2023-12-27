@@ -1,0 +1,13 @@
+{
+  "name": "lru_cache",
+  "version": "1.0.0",
+  "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.",
+  "main": "lru_cache.js",
+  "scripts": {
+    "test": "mocha lru_cache_test.js"
+  },
+  "dependencies": {
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0"
+  }
+}
