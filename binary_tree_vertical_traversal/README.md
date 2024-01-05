@@ -1,3 +1,5 @@
+# Description
+
 Given the root of a binary tree, calculate the vertical order traversal of the binary tree.
 
 For each node at position (row, col), its left and right children will be at positions (row + 1, col - 1) and (row + 1, col + 1) respectively. The root of the tree is at (0, 0).
@@ -24,7 +26,9 @@ end
 
 ```
 
-Example 1:
+# Examples
+
+## Example 1:
 
 ![](images/example1.jpeg)
 
@@ -48,7 +52,7 @@ Column 1: Only node 20 is in this column.
 Column 2: Only node 7 is in this column.
 ```
 
-Example 2:
+## Example 2:
 
 ![](images/example2.jpeg)
 
@@ -77,7 +81,7 @@ Column 1: Only node 3 is in this column.
 Column 2: Only node 7 is in this column.
 ```
 
-Example 3:
+## Example 3:
 
 ![](images/example3.jpeg)
 
@@ -102,4 +106,13 @@ Output:
 Explanation:
 This case is the exact same as example 2, but with nodes 5 and 6 swapped.
 Note that the solution remains the same since 5 and 6 are in the same location and should be ordered by their values.
+```
+
+# Running the specs
+
+Ruby:
+```
+cd ruby
+bundle install
+rspec lru_cache_test.rb
 ```
