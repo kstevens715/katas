@@ -3,6 +3,7 @@ class LRUCache
     @capacity_range = (capacity..)
     @cache = {}
     @recent = []
+    @lru = []
   end
 
   def get(key)
@@ -20,16 +21,17 @@ class LRUCache
   private
 
   attr_accessor :recent
-  attr_reader :cache, :capacity_range
+  attr_reader :cache, :capacity_range, :lru
 
   def record_ru(key)
     recent.unshift(key).uniq!
-    recent.slice! capacity_range
+    lru.push(*recent.slice!(capacity_range))
   end
 
   def evict_lru
-    cache.delete_if do |key|
-      !recent.include? key
+    lru.reject! do |key|
+      cache.delete key
+      true
     end
   end
 end
