@@ -1,5 +1,5 @@
 class CommentStripper
-  def self.strip
+  def strip
     # TODO
   end
 end

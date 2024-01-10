@@ -21,7 +21,7 @@ bananas
 
 Example spec:
 ```
-result = CommentStripper.strip("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"])
+result = CommentStripper.new.strip("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"])
 expect(result).to eq("apples, pears\ngrapes\nbananas")
 ```
 
