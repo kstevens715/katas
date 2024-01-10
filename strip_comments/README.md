@@ -17,7 +17,6 @@ The output expected would be:
 apples, pears
 grapes
 bananas
-The code would be called like so:
 ```
 
 Example spec:
