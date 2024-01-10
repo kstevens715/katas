@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative "comment_stripper.rb"
+require './comment_stripper'
 
 describe CommentStripper do
   it 'README example' do

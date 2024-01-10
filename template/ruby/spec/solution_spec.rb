@@ -1,3 +1,4 @@
+require 'rspec'
 require './solution'
 
 describe Solution do

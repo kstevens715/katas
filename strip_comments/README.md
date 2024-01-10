@@ -25,10 +25,16 @@ result = CommentStripper.strip("apples, pears # and bananas\ngrapes\nbananas !ap
 expect(result).to eq("apples, pears\ngrapes\nbananas")
 ```
 
-## Running the test
-
+### Running ruby build
 ```
 cd ruby
 bundle install
-rspec comment_stripper_test.rb
+rspec
+```
+
+### Running javascript build
+
+```
+npm install
+npm test
 ```
