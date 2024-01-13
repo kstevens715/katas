@@ -1,7 +1,5 @@
 class CommentStripper
-
-  def self.strip(input, markers)
-
+  def strip
+    # TODO
   end
-
 end
