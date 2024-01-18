@@ -17,19 +17,24 @@ The output expected would be:
 apples, pears
 grapes
 bananas
-The code would be called like so:
 ```
 
 Example spec:
 ```
-result = CommentStripper.strip("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"])
+result = CommentStripper.new.strip("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"])
 expect(result).to eq("apples, pears\ngrapes\nbananas")
 ```
 
-## Running the test
-
+### Running ruby build
 ```
 cd ruby
 bundle install
-rspec comment_stripper_test.rb
+rspec
+```
+
+### Running javascript build
+
+```
+npm install
+npm test
 ```

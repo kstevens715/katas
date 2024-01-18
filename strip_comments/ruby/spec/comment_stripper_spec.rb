@@ -1,12 +1,12 @@
 require 'rspec'
-require_relative "comment_stripper.rb"
+require './comment_stripper'
 
 describe CommentStripper do
   it 'README example' do
     input = "apples, pears # and bananas\ngrapes\nbananas !apples"
     markers = ["#", "!"]
 
-    result = CommentStripper.strip(input, markers)
+    result = CommentStripper.new.strip(input, markers)
 
     expect(result).to eq("apples, pears\ngrapes\nbananas")
   end
@@ -15,7 +15,7 @@ describe CommentStripper do
     input = "a #b\nc\nd $e f g"
     markers = ["#", "$"]
 
-    result = CommentStripper.strip(input, markers)
+    result = CommentStripper.new.strip(input, markers)
 
     expect(result).to eq("a\nc\nd")
   end
@@ -24,7 +24,7 @@ describe CommentStripper do
     input = "apples, pears# and bananas\ngrapes\nbananas!apples"
     markers = ["#", "!"]
 
-    result = CommentStripper.strip(input, markers)
+    result = CommentStripper.new.strip(input, markers)
 
     expect(result).to eq("apples, pears\ngrapes\nbananas")
   end
